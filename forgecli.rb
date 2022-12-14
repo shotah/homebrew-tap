@@ -11,7 +11,7 @@ class Forgecli < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/shotah/forgecli/releases/download/0.0.3/forgecli_0.0.3_darwin_arm64.tar.gz"
-      sha256 "20f2f22af262bb8717f3d840b286dc5605393d4666cf4b10d421c67f70ceaee5"
+      sha256 "2da433e29affe2ffd6f50133a50dfe96d75ec206c1812dcb91975fa39c6ef5db"
 
       def install
         bin.install "forgecli"
@@ -19,7 +19,7 @@ class Forgecli < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/shotah/forgecli/releases/download/0.0.3/forgecli_0.0.3_darwin_amd64.tar.gz"
-      sha256 "c3d98c3049e3f96255fedfb99ac2856d8d63523b2e657ec795e3b0f58dcc3d2a"
+      sha256 "7542eeb11ad88d940194ef5a9bd9e6c4fbd7b3aa105c3dde2f4438a2b50f8942"
 
       def install
         bin.install "forgecli"
@@ -28,17 +28,17 @@ class Forgecli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/shotah/forgecli/releases/download/0.0.3/forgecli_0.0.3_linux_amd64.tar.gz"
-      sha256 "a07257ff339fe140bc311fb1e107dd186fdc69689ce4ec5e61e95e787a54585f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/shotah/forgecli/releases/download/0.0.3/forgecli_0.0.3_linux_arm64.tar.gz"
+      sha256 "e77a76f3288d0b626146c1265a90c984f621bcc87d795917c5d70f4318381592"
 
       def install
         bin.install "forgecli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/shotah/forgecli/releases/download/0.0.3/forgecli_0.0.3_linux_arm64.tar.gz"
-      sha256 "8046a768ecfee34655f1980d5eb2577c20392c0c585ea9120915964a382c04cc"
+    if Hardware::CPU.intel?
+      url "https://github.com/shotah/forgecli/releases/download/0.0.3/forgecli_0.0.3_linux_amd64.tar.gz"
+      sha256 "70c433f4884f8092740b343256c06dae141f418f55e343df66072f398998c4df"
 
       def install
         bin.install "forgecli"
