@@ -9,17 +9,17 @@ class Forgecli < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.5/forgecli_1.0.5_darwin_amd64.tar.gz"
-      sha256 "976c368b915260fd722a566ca2e91d401549b8117c0ec9323ba4ffc9fe39663a"
+    if Hardware::CPU.arm?
+      url "https://github.com/shotah/forgecli/releases/download/1.0.5/forgecli_1.0.5_darwin_arm64.tar.gz"
+      sha256 "6c1324711d86a4b5f5ecc2974fd5cc7dd675bfd542a529c671d24be3c9f9b7a6"
 
       def install
         bin.install "forgecli"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.5/forgecli_1.0.5_darwin_arm64.tar.gz"
-      sha256 "aa47a48c2ed6656a511bdce819cda3f3701167e2bcfaed2e880daa94ee4d0579"
+    if Hardware::CPU.intel?
+      url "https://github.com/shotah/forgecli/releases/download/1.0.5/forgecli_1.0.5_darwin_amd64.tar.gz"
+      sha256 "6fb2000337c6039071c141a4cbce479eec5275753cd0228e7d0cf0df3a795f8e"
 
       def install
         bin.install "forgecli"
@@ -29,16 +29,16 @@ class Forgecli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.5/forgecli_1.0.5_linux_arm64.tar.gz"
-      sha256 "3152149a0f9f91619418425ad5a758e48a4bacbeccd44b691bdb472560037f60"
+      url "https://github.com/shotah/forgecli/releases/download/1.0.5/forgecli_1.0.5_linux_arm64.tar.gz"
+      sha256 "1b06c3134679719dc7307e1de7941f4c05a61464e2830f1342dc9743426eda3f"
 
       def install
         bin.install "forgecli"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.5/forgecli_1.0.5_linux_amd64.tar.gz"
-      sha256 "0bd02f4dc5905fbe554c2dc02cb82fe6c05b6c43bcf857edb61c2df4cb388779"
+      url "https://github.com/shotah/forgecli/releases/download/1.0.5/forgecli_1.0.5_linux_amd64.tar.gz"
+      sha256 "d82c88c3ea77b751e799bf10a1f15720b9e29223fac927f6d4917c985b7a4c5b"
 
       def install
         bin.install "forgecli"
