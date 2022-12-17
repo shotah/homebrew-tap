@@ -5,21 +5,21 @@
 class Forgecli < Formula
   desc "Software to easily install minecraft mod clients and mods"
   homepage ""
-  version "1.0.8"
+  version "1.0.9"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.8/forgecli_1.0.8_darwin_amd64.tar.gz"
-      sha256 "b7a9570c13f4f693012d99aed31e23ce229c88a128be0ed5c138a9329d87a377"
+    if Hardware::CPU.arm?
+      url "https://github.com/shotah/forgecli/releases/download/v1.0.9/forgecli_1.0.9_darwin_arm64.tar.gz"
+      sha256 "ec0978c050353d4b0cb04e868e7916db54d677c54579fd73d1e796ddbc41b92e"
 
       def install
         bin.install "forgecli"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.8/forgecli_1.0.8_darwin_arm64.tar.gz"
-      sha256 "f389b84bd7e54ea7faa43b30f90fdde1caf5bf52ffc24320383462d642e42ec4"
+    if Hardware::CPU.intel?
+      url "https://github.com/shotah/forgecli/releases/download/v1.0.9/forgecli_1.0.9_darwin_amd64.tar.gz"
+      sha256 "db192a97c4e21c74c2b25797990d283fbac3a3a81be3d3bd294482736004a905"
 
       def install
         bin.install "forgecli"
@@ -28,17 +28,17 @@ class Forgecli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.8/forgecli_1.0.8_linux_arm64.tar.gz"
-      sha256 "b3552a2b40930d95605cbf5f86a9e6128f9f55c73d6404b1b7a384ea46fe60f9"
+    if Hardware::CPU.intel?
+      url "https://github.com/shotah/forgecli/releases/download/v1.0.9/forgecli_1.0.9_linux_amd64.tar.gz"
+      sha256 "ec477ffae0a25ea9f9a4f25da80c064dc43203a100a99afe861e85d784e86ffd"
 
       def install
         bin.install "forgecli"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.8/forgecli_1.0.8_linux_amd64.tar.gz"
-      sha256 "c72942d028468ead9ad2f09e587ec0ce087a6502ccc5ffd22bd1f1990a94da3f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/shotah/forgecli/releases/download/v1.0.9/forgecli_1.0.9_linux_arm64.tar.gz"
+      sha256 "2eb4bfaf9411deadd56bcbe64693a79f20e4d4f8dab5cfdade5b1b5727f54e22"
 
       def install
         bin.install "forgecli"
