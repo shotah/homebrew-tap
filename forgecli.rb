@@ -5,21 +5,21 @@
 class Forgecli < Formula
   desc "Software to easily install minecraft mod clients and mods"
   homepage ""
-  version "1.0.9"
+  version "0.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/shotah/forgecli/releases/download/1.0.9/forgecli_1.0.9_darwin_arm64.tar.gz"
-      sha256 "bb09b9da5539b685365b6c085b916d2f6fab51974523a97296cfc8e9da03e2aa"
+      url "https://github.com/shotah/forgecli/releases/download/v0.0.3/forgecli_0.0.3_darwin_arm64.tar.gz"
+      sha256 "b6359eebace92d75fe02a9ad53f8d171fc62f05f4be95f21be0c6a84b64a3471"
 
       def install
         bin.install "forgecli"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/shotah/forgecli/releases/download/1.0.9/forgecli_1.0.9_darwin_amd64.tar.gz"
-      sha256 "125de849744ea757fd8811c392eaea74004039b66f5fbf33d0da8675178ba2e5"
+      url "https://github.com/shotah/forgecli/releases/download/v0.0.3/forgecli_0.0.3_darwin_amd64.tar.gz"
+      sha256 "f11ccbfe023ae49bbc3fd61f213e915d6b5b0b58dcb3f021f963ae3725b66c48"
 
       def install
         bin.install "forgecli"
@@ -28,17 +28,17 @@ class Forgecli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/shotah/forgecli/releases/download/1.0.9/forgecli_1.0.9_linux_amd64.tar.gz"
-      sha256 "6963021be9737c8dc321725431e95a4a07e3f633e232f6c6e457066ba6d2cc2e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/shotah/forgecli/releases/download/v0.0.3/forgecli_0.0.3_linux_arm64.tar.gz"
+      sha256 "83dbb7a6f8b4b95c259c2552d43f7ab49d67bb5620f5db8d137602d3ff64c87f"
 
       def install
         bin.install "forgecli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/shotah/forgecli/releases/download/1.0.9/forgecli_1.0.9_linux_arm64.tar.gz"
-      sha256 "7cbdb56cd5b50c5a3bdc6ed8186dba2e79d33a6ac1b59d206c562f0d1d867845"
+    if Hardware::CPU.intel?
+      url "https://github.com/shotah/forgecli/releases/download/v0.0.3/forgecli_0.0.3_linux_amd64.tar.gz"
+      sha256 "27093da5564bdb949f872aa98ab68ad977b2c488f14ef39a8a41b2226023dcf4"
 
       def install
         bin.install "forgecli"
