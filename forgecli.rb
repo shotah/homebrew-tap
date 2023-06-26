@@ -5,21 +5,21 @@
 class Forgecli < Formula
   desc "Software to easily install minecraft mod clients and mods"
   homepage ""
-  version "1.0.20"
+  version "1.0.21"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.20/forgecli_1.0.20_darwin_amd64.tar.gz"
-      sha256 "8ac079974df32e0fd9a739c0f2a5ce3cfa626727957afc3b1754d11a34958aac"
+    if Hardware::CPU.arm?
+      url "https://github.com/shotah/forgecli/releases/download/v1.0.21/forgecli_1.0.21_darwin_arm64.tar.gz"
+      sha256 "789d31ba68a1c75f01ca8941eb25da1a81c083fd4b3c29ed12617efe49ffc1d7"
 
       def install
         bin.install "forgecli"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.20/forgecli_1.0.20_darwin_arm64.tar.gz"
-      sha256 "ef28e874449e06f3517b754931013711a2be393e75811bf96b24b429b19a6d7d"
+    if Hardware::CPU.intel?
+      url "https://github.com/shotah/forgecli/releases/download/v1.0.21/forgecli_1.0.21_darwin_amd64.tar.gz"
+      sha256 "4a07559c102d2b70b91becb81d1fc99404ecde1731f5e4a8aac2ce7d3682da51"
 
       def install
         bin.install "forgecli"
@@ -28,17 +28,17 @@ class Forgecli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.20/forgecli_1.0.20_linux_amd64.tar.gz"
-      sha256 "3b876e8093639fc45a8cba8461dd5175fbf48c2ac913f1dc69df17b6825f8091"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/shotah/forgecli/releases/download/v1.0.21/forgecli_1.0.21_linux_arm64.tar.gz"
+      sha256 "37d0aeab7aa6a6edf1378f98e438e3e009c821cbb7f4df337c8e15bd0a442d27"
 
       def install
         bin.install "forgecli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/shotah/forgecli/releases/download/v1.0.20/forgecli_1.0.20_linux_arm64.tar.gz"
-      sha256 "9c0e1506f86a86e8d33f0aa69d55250fc428d64920e315f9e52edf173f05eceb"
+    if Hardware::CPU.intel?
+      url "https://github.com/shotah/forgecli/releases/download/v1.0.21/forgecli_1.0.21_linux_amd64.tar.gz"
+      sha256 "99c216c49ad5e8c8e0ba4473a71a17e02e981c490509c4047c5fcb24d64cb557"
 
       def install
         bin.install "forgecli"
